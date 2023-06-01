@@ -1,6 +1,6 @@
 # Assignment3-XSS-AND-CSRF-DEFENSE
 
-##ADDED FILE - SECURITY.PHP
+## ADDED FILE - SECURITY.PHP
 
     <?php
     header("X-Frame-Options: DENY");
@@ -22,14 +22,14 @@ The X-Frame-Options header is set to DENY to prevent the web page from being loa
 
 The Content-Security-Policy header sets the Content Security Policy for the page. In this example, the default-src directive is set to 'self', which allows resources (such as scripts, stylesheets, images, etc.) to be loaded only from the same origin as the page itself.
 
-#UPDATED login/index.php
+# UPDATED login/index.php
  Validate the CSRF token in index.php form
 
 
      <input type="hidden" name="csrf_token" value="<?php include 'security.php' ;session_start(); 
     echo generateCSRFToken(); ?>">
 
- #UPDATED auth.php
+ # UPDATED auth.php
  
      if ($_SERVER['REQUEST_METHOD'] === 'POST') {
      // Check if CSRF token exists and matches the submitted value
